@@ -27,6 +27,71 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "contributor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ContributionReceived",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "campaignActive",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "claimFunds",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contribute",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "contributions",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "creator",
 				"outputs": [
@@ -54,6 +119,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "getRefund",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "goal",
 				"outputs": [
 					{
@@ -67,12 +139,38 @@
 			},
 			{
 				"inputs": [],
+				"name": "goalReached",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "title",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalRaised",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -107,11 +205,11 @@
 	},
 	"sources": {
 		"contracts/crowdfunding.sol": {
-			"keccak256": "0x7d507dc3a24c3c6778fafe02967a3546108e5209d05745e6425dbc8373591652",
+			"keccak256": "0x016e9ab86b396957072dd11e7dc2854316696f5389f1e2a3ba5679ee1dddc964",
 			"license": "free",
 			"urls": [
-				"bzz-raw://cfa4fc236ffee96dbea4ae32aac5c24120095c60b883ae6b2865aff53e016abd",
-				"dweb:/ipfs/QmUry4arv5dPyVtJeCuW9z4Ee91GnADAeXHKupgF9DVmmm"
+				"bzz-raw://0031e50adf612b71b0542e514a3fc625359238a226cc226c7a15fb5f86b146a4",
+				"dweb:/ipfs/QmfLHuT64acxoiLBvGkcXSi5ReiDrN2uUA8Zg9SRsNteqk"
 			]
 		}
 	},

@@ -47,19 +47,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "campaignActive",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "claimFunds",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -139,19 +126,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "goalReached",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "title",
 				"outputs": [
 					{
@@ -205,11 +179,11 @@
 	},
 	"sources": {
 		"contracts/crowdfunding.sol": {
-			"keccak256": "0x016e9ab86b396957072dd11e7dc2854316696f5389f1e2a3ba5679ee1dddc964",
+			"keccak256": "0x79dc35a46849a47740ea95df95d7cd52a752853d67ae881d7ea5dc8ec687b1a0",
 			"license": "free",
 			"urls": [
-				"bzz-raw://0031e50adf612b71b0542e514a3fc625359238a226cc226c7a15fb5f86b146a4",
-				"dweb:/ipfs/QmfLHuT64acxoiLBvGkcXSi5ReiDrN2uUA8Zg9SRsNteqk"
+				"bzz-raw://1442c648a2538843d70fc047756eb61c07083f60ab400327e95dbc8645882d08",
+				"dweb:/ipfs/Qmbp4ybN2rd7EoUHjQ49tzFuDVHGYUEgpzxiV6gniwW9sE"
 			]
 		}
 	},

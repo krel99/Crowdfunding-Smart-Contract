@@ -31,41 +31,35 @@ contract Campaign {
    
     }
 
-    function contribute() public payable {
-        require(!campaignActive(), "Campaign not active");
+    modifier onlyCreator() { require(msg.sender == creator); _;}
+    modifier isCampaignActive() {require (block.timestamp <= deadline); _;}
+        modifier isCampaignInactive() {require (block.timestamp > deadline); _;}
+    modifier goalReached() {require (totalRaised >= goal); _;}
+    modifier hasContribution() {
+    require(contributions[msg.sender] > 0, "No contribution found");
+    _;
+}
+
+
+    function contribute() public payable isCampaignActive {
         contributions[msg.sender] += msg.value;
         totalRaised += msg.value;
         emit ContributionReceived(msg.sender, msg.value);
     }
 
-    function claimFunds() public {
-        require(msg.sender == creator, "Only creator can claim");
-        require(block.timestamp > deadline, "Campaign not ended");
-        require(goalReached(), "Goal not reached");
-        require(address(this).balance > 0, "No funds to claim");
-        
+    function claimFunds() public onlyCreator goalReached isCampaignInactive {
+        require(address(this).balance > 0, "No funds to claim"); // this could also be modifier
         uint256 amount = address(this).balance;
         (bool success, ) = creator.call{value: amount}("");
         require(success, "Transfer failed");
     }
 
-    function getRefund() public {
-        require(block.timestamp > deadline, "Campaign not ended");
-        require(!goalReached(), "Goal was reached");
-        require(contributions[msg.sender] > 0, "No contribution found");
-        
+    function getRefund() public isCampaignInactive hasContribution {
         uint256 amount = contributions[msg.sender];
         contributions[msg.sender] = 0;
         (bool success, ) = payable(msg.sender).call{value: amount}("");
         require(success, "Refund failed");
     }
 
-    function goalReached() public view returns (bool) {
-        return totalRaised >= goal;
-    }
-
-    function campaignActive() public view returns (bool) {
-        return block.timestamp <= deadline;
-    } 
 }
 
